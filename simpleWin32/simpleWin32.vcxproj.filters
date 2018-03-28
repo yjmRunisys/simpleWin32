@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{10047a8b-6d93-41e7-9145-3d11173868c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -24,29 +27,41 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="quoteUse.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="testCStringDestruction.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="udpGroupSocket.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="OutPut.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Sort.h">
-      <Filter>头文件</Filter>
+      <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="RecordTime.hpp">
-      <Filter>头文件</Filter>
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="quoteUse.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="testCStringDestruction.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="udpGroupSocket.hpp">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\ObjectTest.hpp">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\operateNew.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\SMartPoint.hpp">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\StructSize.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="SortAlgorithm.hpp">
+      <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="Flyweight.h">
-      <Filter>头文件</Filter>
+      <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="singleton.h">
-      <Filter>头文件</Filter>
+      <Filter>util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
