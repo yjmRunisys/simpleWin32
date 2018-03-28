@@ -42,6 +42,12 @@
     <ClInclude Include="RecordTime.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Flyweight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

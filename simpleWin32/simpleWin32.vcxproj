@@ -76,9 +76,11 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Flyweight.h" />
     <ClInclude Include="OutPut.h" />
     <ClInclude Include="quoteUse.h" />
     <ClInclude Include="RecordTime.hpp" />
+    <ClInclude Include="singleton.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
