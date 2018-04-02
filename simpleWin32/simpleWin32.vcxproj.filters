@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="DesignPattern">
+      <UniqueIdentifier>{288a0fe2-86d1-4841-991b-293d6bb37016}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -43,10 +46,19 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Flyweight.h">
-      <Filter>头文件</Filter>
+      <Filter>DesignPattern</Filter>
     </ClInclude>
     <ClInclude Include="singleton.h">
-      <Filter>头文件</Filter>
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Visitor.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateMethod.h">
+      <Filter>DesignPattern</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

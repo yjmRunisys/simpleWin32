@@ -7,11 +7,18 @@
 #include "Sort.h"
 #include "Flyweight.h"
 #include "singleton.h"
+#include "Observer.h"
+#include "Visitor.h"
+#include "TemplateMethod.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//testUdpGroup();
-	testFlyweight();
+	testTemplateMethod();
+
+// 	char a[] = "test char array";
+// 	unsigned char *b = (unsigned char *)a;
+// 	printf("%s\n",b);
 	
 	return 0;
 }

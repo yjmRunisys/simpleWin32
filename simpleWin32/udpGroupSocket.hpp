@@ -453,7 +453,7 @@ public:
 
 		int InitMultiCient2()
 		{
-			WSADATA wsd;
+			//WSADATA wsd;
 			struct sockaddr_in remote;
 			SOCKET sock,sockM;
 			TCHAR sendbuf[BUFSIZE];
@@ -486,7 +486,7 @@ public:
 			while(1)
 			{
 				printf("SEND : ");
-				scanf("%s",sendbuf);
+				scanf_s("%s",sendbuf);
 				if( sendto(sockM,(char*)sendbuf,strlen(sendbuf),0,(struct sockaddr*) &remote,sizeof(remote))==SOCKET_ERROR)
 				{
 					printf("sendto failed with: %d\n",WSAGetLastError());
