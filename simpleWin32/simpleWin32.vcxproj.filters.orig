@@ -13,8 +13,13 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+<<<<<<< HEAD
     <Filter Include="DesignPattern">
       <UniqueIdentifier>{288a0fe2-86d1-4841-991b-293d6bb37016}</UniqueIdentifier>
+=======
+    <Filter Include="util">
+      <UniqueIdentifier>{10047a8b-6d93-41e7-9145-3d11173868c0}</UniqueIdentifier>
+>>>>>>> 5649a72d1c8fb6f83cda5d9ddf7348df4408bcc0
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,12 +63,11 @@
       <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="Flyweight.h">
-      <Filter>util</Filter>
+<<<<<<< HEAD
       <Filter>DesignPattern</Filter>
     </ClInclude>
     <ClInclude Include="singleton.h">
       <Filter>DesignPattern</Filter>
-      <Filter>util</Filter>
     </ClInclude>
     <ClInclude Include="Observer.h">
       <Filter>DesignPattern</Filter>
@@ -73,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="TemplateMethod.h">
       <Filter>DesignPattern</Filter>
+=======
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>util</Filter>
+>>>>>>> 5649a72d1c8fb6f83cda5d9ddf7348df4408bcc0
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

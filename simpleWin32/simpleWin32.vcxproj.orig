@@ -89,11 +89,14 @@
     <ClInclude Include="TemplateMethod.h" />
     <ClInclude Include="testCStringDestruction.h" />
     <ClInclude Include="udpGroupSocket.hpp" />
+<<<<<<< HEAD
     <ClInclude Include="Visitor.h" />
+=======
     <ClInclude Include="util\ObjectTest.hpp" />
     <ClInclude Include="util\operateNew.h" />
     <ClInclude Include="util\SMartPoint.hpp" />
     <ClInclude Include="util\StructSize.h" />
+>>>>>>> 5649a72d1c8fb6f83cda5d9ddf7348df4408bcc0
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OutPut.cpp" />
