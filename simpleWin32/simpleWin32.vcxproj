@@ -83,17 +83,12 @@
     <ClInclude Include="quoteUse.h" />
     <ClInclude Include="RecordTime.hpp" />
     <ClInclude Include="singleton.h" />
-    <ClInclude Include="SortAlgorithm.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TemplateMethod.h" />
     <ClInclude Include="testCStringDestruction.h" />
     <ClInclude Include="udpGroupSocket.hpp" />
     <ClInclude Include="Visitor.h" />
-    <ClInclude Include="util\ObjectTest.hpp" />
-    <ClInclude Include="util\operateNew.h" />
-    <ClInclude Include="util\SMartPoint.hpp" />
-    <ClInclude Include="util\StructSize.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OutPut.cpp" />
