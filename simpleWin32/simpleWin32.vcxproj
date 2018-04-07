@@ -77,13 +77,18 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChainResponsibility.h" />
+    <ClInclude Include="Command.h" />
     <ClInclude Include="Flyweight.h" />
+    <ClInclude Include="Mediator.h" />
+    <ClInclude Include="MementoPattern.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="OutPut.h" />
     <ClInclude Include="quoteUse.h" />
     <ClInclude Include="RecordTime.hpp" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StrategyPattern.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TemplateMethod.h" />
     <ClInclude Include="testCStringDestruction.h" />
