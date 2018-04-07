@@ -73,6 +73,18 @@
     <ClInclude Include="Command.h">
       <Filter>DesignPattern</Filter>
     </ClInclude>
+    <ClInclude Include="bridgePattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandPattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Sort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFactory.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
