@@ -78,7 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
+    <ClInclude Include="Adapter.h" />
     <ClInclude Include="bridgePattern.h" />
+    <ClInclude Include="BuilderPattern.h" />
     <ClInclude Include="ChainResponsibility.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandPattern.h" />
@@ -87,6 +89,7 @@
     <ClInclude Include="MementoPattern.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="OutPut.h" />
+    <ClInclude Include="ProtypePattern.h" />
     <ClInclude Include="quoteUse.h" />
     <ClInclude Include="RecordTime.hpp" />
     <ClInclude Include="singleton.h" />

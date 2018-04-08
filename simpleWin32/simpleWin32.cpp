@@ -10,6 +10,7 @@
 #include "Observer.h"
 #include "Visitor.h"
 #include "TemplateMethod.h"
+#include "Adapter.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {

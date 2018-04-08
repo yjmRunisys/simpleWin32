@@ -85,6 +85,15 @@
     <ClInclude Include="AbstractFactory.h">
       <Filter>DesignPattern</Filter>
     </ClInclude>
+    <ClInclude Include="Adapter.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtypePattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="BuilderPattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
