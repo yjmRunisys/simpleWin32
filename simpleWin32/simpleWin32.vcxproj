@@ -84,6 +84,8 @@
     <ClInclude Include="ChainResponsibility.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandPattern.h" />
+    <ClInclude Include="CompositePattern.h" />
+    <ClInclude Include="FacadePattern.h" />
     <ClInclude Include="Flyweight.h" />
     <ClInclude Include="Mediator.h" />
     <ClInclude Include="MementoPattern.h" />
