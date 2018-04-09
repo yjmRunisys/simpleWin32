@@ -104,6 +104,7 @@
     <ClInclude Include="testCStringDestruction.h" />
     <ClInclude Include="udpGroupSocket.hpp" />
     <ClInclude Include="Visitor.h" />
+    <ClInclude Include="XOR.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OutPut.cpp" />
