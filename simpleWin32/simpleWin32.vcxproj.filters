@@ -94,6 +94,12 @@
     <ClInclude Include="BuilderPattern.h">
       <Filter>DesignPattern</Filter>
     </ClInclude>
+    <ClInclude Include="CompositePattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="FacadePattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
