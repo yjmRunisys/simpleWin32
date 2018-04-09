@@ -100,6 +100,9 @@
     <ClInclude Include="FacadePattern.h">
       <Filter>DesignPattern</Filter>
     </ClInclude>
+    <ClInclude Include="DecoratorPattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

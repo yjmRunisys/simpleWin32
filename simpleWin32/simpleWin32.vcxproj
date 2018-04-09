@@ -85,6 +85,7 @@
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandPattern.h" />
     <ClInclude Include="CompositePattern.h" />
+    <ClInclude Include="DecoratorPattern.h" />
     <ClInclude Include="FacadePattern.h" />
     <ClInclude Include="Flyweight.h" />
     <ClInclude Include="Mediator.h" />
