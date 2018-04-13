@@ -1,5 +1,6 @@
 #pragma once
 #include "stdafx.h"
+#include <afxwin.h>
 
 class CTestCString{
 public:
@@ -16,7 +17,7 @@ public:
 	}
 };
 
-CString::mCs = new CString(_T("Ok"));
+CString * CTestCString::mCs = new CString(_T("Ok"));
 
 CTestCString mTCS;
 

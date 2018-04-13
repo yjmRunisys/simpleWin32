@@ -112,6 +112,15 @@
     <ClInclude Include="XOR.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
+    <ClInclude Include="structDdat.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlOperator.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeConvert.h">
+      <Filter>util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -121,7 +130,13 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="OutPut.cpp">
-      <Filter>源文件</Filter>
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlOperator.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeConvert.cpp">
+      <Filter>util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

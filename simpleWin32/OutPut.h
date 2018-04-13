@@ -17,6 +17,9 @@ private:
 	static COutPut *pOutPut;
 	HANDLE hLogEven;//保证发送独占性，通过事件处理保证独占性
 
+	void writeFileBina(string src,string fileName);//
+	void writeFileBina(char* src,int size,string fileName);
+
 private:
 	//销毁单例模式COutPut
 	class CGarbe{
@@ -29,4 +32,6 @@ private:
 };
 
 extern COutPut *g_pMainWnd;
+
+void AfxInfoLog(string msg);
 
