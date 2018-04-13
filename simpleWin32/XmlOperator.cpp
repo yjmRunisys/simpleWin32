@@ -269,6 +269,23 @@ void XmlSdk::ReadXml(string xmlName)
 	MSXML2::IXMLDOMNodeListPtr spNodeList = spRoot->childNodes;
 	for (long i = 0; i != spNodeList->length; ++i) //遍历子节点
 		ProcessNode(spNodeList->item[i]);
+
+	//写入XML
+	spRoot->selectSingleNode(L"/root/node1")->text = L"newText";
+	spRoot->selectSingleNode(L"/root/node2/childnode1/@attrib1")->nodeValue =  L"newValue";
+	MSXML2::IXMLDOMNodePtr spNewNode = spRoot->selectSingleNode(L"/root/node2")->appendChild(
+		spXMLDoc->createNode(_variant_t(NODE_ELEMENT), L"childnode3", L"")
+		); //给node2创建新子节点childnode3
+	spNewNode->text = L"childtext2";
+	MSXML2::IXMLDOMElementPtr spEle = spNewNode;
+	spEle->setAttribute(L"attrib1", _variant_t(L"value1")); //添加新属性
+	spXMLDoc->save(_variant_t(L"stocks.xml"));
+
+	spNewNode.Release();
+	spEle.Release();
+	spNodeList.Release();
+	spRoot.Release();
+	spXMLDoc.Release();
 }
 
 void TestXml()
