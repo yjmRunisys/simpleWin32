@@ -50,7 +50,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\simpleWin32;.\simpleWin32\util</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;.\tinyxml.h;.\Algorithm;.\DesignPattern;.\util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -65,6 +65,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\tinyxml.h;.\Algorithm;.\DesignPattern;.\util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -77,47 +78,55 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AbstractFactory.h" />
-    <ClInclude Include="Adapter.h" />
-    <ClInclude Include="bridgePattern.h" />
-    <ClInclude Include="BuilderPattern.h" />
-    <ClInclude Include="ChainResponsibility.h" />
-    <ClInclude Include="CodeConvert.h" />
-    <ClInclude Include="Command.h" />
-    <ClInclude Include="CommandPattern.h" />
-    <ClInclude Include="CompositePattern.h" />
-    <ClInclude Include="DecoratorPattern.h" />
-    <ClInclude Include="FacadePattern.h" />
-    <ClInclude Include="Flyweight.h" />
-    <ClInclude Include="Mediator.h" />
-    <ClInclude Include="MementoPattern.h" />
-    <ClInclude Include="Observer.h" />
-    <ClInclude Include="OutPut.h" />
-    <ClInclude Include="ProtypePattern.h" />
-    <ClInclude Include="quoteUse.h" />
-    <ClInclude Include="RecordTime.hpp" />
-    <ClInclude Include="singleton.h" />
-    <ClInclude Include="Sort.h" />
+    <ClInclude Include="Algorithm\structDdat.h" />
+    <ClInclude Include="Algorithm\XOR.h" />
+    <ClInclude Include="DesignPattern\AbstractFactory.h" />
+    <ClInclude Include="DesignPattern\Adapter.h" />
+    <ClInclude Include="DesignPattern\bridgePattern.h" />
+    <ClInclude Include="DesignPattern\BuilderPattern.h" />
+    <ClInclude Include="DesignPattern\ChainResponsibility.h" />
+    <ClInclude Include="DesignPattern\Command.h" />
+    <ClInclude Include="DesignPattern\CommandPattern.h" />
+    <ClInclude Include="DesignPattern\CompositePattern.h" />
+    <ClInclude Include="DesignPattern\DecoratorPattern.h" />
+    <ClInclude Include="DesignPattern\FacadePattern.h" />
+    <ClInclude Include="DesignPattern\FactoryMethod.h" />
+    <ClInclude Include="DesignPattern\Flyweight.h" />
+    <ClInclude Include="DesignPattern\Mediator.h" />
+    <ClInclude Include="DesignPattern\MementoPattern.h" />
+    <ClInclude Include="DesignPattern\Observer.h" />
+    <ClInclude Include="DesignPattern\ProtypePattern.h" />
+    <ClInclude Include="DesignPattern\ProxyPattern.h" />
+    <ClInclude Include="DesignPattern\SimpleFactory.h" />
+    <ClInclude Include="DesignPattern\singleton.h" />
+    <ClInclude Include="DesignPattern\StrategyPattern.h" />
+    <ClInclude Include="DesignPattern\TemplateMethod.h" />
+    <ClInclude Include="DesignPattern\Visitor.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="StrategyPattern.h" />
-    <ClInclude Include="structDdat.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TemplateMethod.h" />
-    <ClInclude Include="testCStringDestruction.h" />
-    <ClInclude Include="udpGroupSocket.hpp" />
-    <ClInclude Include="Visitor.h" />
-    <ClInclude Include="XmlOperator.h" />
-    <ClInclude Include="XOR.h" />
+    <ClInclude Include="tinyxml.h\tinystr.h" />
+    <ClInclude Include="tinyxml.h\tinyxml.h" />
+    <ClInclude Include="util\CodeConvert.h" />
+    <ClInclude Include="util\OutPut.h" />
+    <ClInclude Include="util\quoteUse.h" />
+    <ClInclude Include="util\RecordTime.hpp" />
+    <ClInclude Include="util\testCStringDestruction.h" />
+    <ClInclude Include="util\udpGroupSocket.hpp" />
+    <ClInclude Include="util\XmlOperator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CodeConvert.cpp" />
-    <ClCompile Include="OutPut.cpp" />
     <ClCompile Include="simpleWin32.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="XmlOperator.cpp" />
+    <ClCompile Include="tinyxml.h\tinystr.cpp" />
+    <ClCompile Include="tinyxml.h\tinyxml.cpp" />
+    <ClCompile Include="tinyxml.h\tinyxmlerror.cpp" />
+    <ClCompile Include="tinyxml.h\tinyxmlparser.cpp" />
+    <ClCompile Include="util\CodeConvert.cpp" />
+    <ClCompile Include="util\OutPut.cpp" />
+    <ClCompile Include="util\XmlOperator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

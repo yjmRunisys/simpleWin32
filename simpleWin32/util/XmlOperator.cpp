@@ -48,14 +48,14 @@ void XmlOperator::ReadXmlOle(string xmlName)
 	spRootEle->get_childNodes(&spNodeList); //子节点列表
 	long nLen;
 	spNodeList->get_length(&nLen); //子节点数
-// 	for (long i = 0; i != nLen; ++i) //遍历子节点
-// 	{
-// 		CComPtr<IXMLDOMNode> spNode;
-// 		spNodeList->get_item(i, &spNode);
-// 		ProcessNode(spNode); //节点处理函数
-// 	}
+	// 	for (long i = 0; i != nLen; ++i) //遍历子节点
+	// 	{
+	// 		CComPtr<IXMLDOMNode> spNode;
+	// 		spNodeList->get_item(i, &spNode);
+	// 		ProcessNode(spNode); //节点处理函数
+	// 	}
 	ReadXmlOneNode(spRootEle,"/root/node2/childnode1/@attrib1");
-	
+
 }
 
 //读取xml某个节点值
@@ -292,4 +292,65 @@ void TestXml()
 {
 	XmlOperator xo;
 	xo.ReadXmlOle("stocks.xml");
+}
+
+/////////////////////////////////////////////////////////////
+#include "tinyxml.h"
+#include "tinystr.h"
+#include <iostream>
+using namespace std;
+int CTestTinyXml::testTXml(int argc, char *argv[])
+{
+	if(argc != 2)
+	{
+		cout << "usage: "<<argv[0] << " xmlfile" << endl;
+		return 1;
+	}
+	TiXmlDocument doc(argv[1]);
+	bool loadOk = doc.LoadFile();
+	if (!loadOk)
+	{
+		cout << "could load:" << doc.ErrorDesc() << endl;
+	}
+	TiXmlPrinter printer;//提供的工具类,目的是将xml的数据按格式输出
+	doc.Accept(&printer);
+	cout  << printer.CStr() << endl;//输出
+
+	TiXmlElement*node = doc.FirstChildElement();//获取第一个element节点
+	cout << node->Value() << endl;//输出节点的值
+	string t;
+	node->QueryValueAttribute("type", &t);//获取节点属性
+	cout << t << endl;
+
+	doc.FirstChild()->NextSibling()->ToElement()->QueryStringAttribute("type", &t);//获取第二个子节点的数据
+	cout << "2:" << t << endl;
+
+	//使用遍历的方式进行处理
+	TiXmlNode* child = NULL;
+	TiXmlElement* element = NULL;
+	TiXmlAttribute *attr = NULL;
+	int ct;
+	while(child = doc.FirstChild()->IterateChildren(child))
+	{
+		cout << child->ValueStr() << "\t";
+		ct = child->Type();
+		cout << ct << "\t";
+		//根据不同的节点类型做相应处理  
+		switch(ct)
+		{
+		case TiXmlNode::TINYXML_TEXT:
+			break;
+		case TiXmlNode::TINYXML_ELEMENT:
+			element = child->ToElement();
+			attr = element->FirstAttribute();
+			while(attr)
+			{
+				cout << attr->NameTStr() << "=" << attr->ValueStr() << '\t';
+				attr = attr->Next();
+			}
+			break;
+		}
+	}
+
+	return 0;
 }

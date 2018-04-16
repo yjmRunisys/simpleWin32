@@ -11,5 +11,5 @@
 #include <tchar.h>
 #include <stdlib.h>
 
-
+#define TIXML_USE_STL
 // TODO: 在此处引用程序需要的其他头文件

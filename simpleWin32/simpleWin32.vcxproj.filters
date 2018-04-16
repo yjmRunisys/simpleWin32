@@ -22,6 +22,9 @@
     <Filter Include="Algorithm">
       <UniqueIdentifier>{099d22ab-1aa8-45c7-8029-489b9d30e2f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="tinyxml">
+      <UniqueIdentifier>{97ae18e2-633f-46e3-a2af-066098dc1fab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -33,93 +36,104 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Flyweight.h">
-      <Filter>util</Filter>
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="Observer.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="Visitor.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="TemplateMethod.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="singleton.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="StrategyPattern.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="MementoPattern.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="Mediator.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="ChainResponsibility.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="Command.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="bridgePattern.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="CommandPattern.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="AbstractFactory.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="Adapter.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="ProtypePattern.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="BuilderPattern.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="CompositePattern.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="FacadePattern.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="DecoratorPattern.h">
-      <Filter>DesignPattern</Filter>
-    </ClInclude>
-    <ClInclude Include="RecordTime.hpp">
+    <ClInclude Include="util\CodeConvert.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="OutPut.h">
+    <ClInclude Include="util\OutPut.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="quoteUse.h">
+    <ClInclude Include="util\quoteUse.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="Sort.h">
+    <ClInclude Include="util\RecordTime.hpp">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="testCStringDestruction.h">
+    <ClInclude Include="util\testCStringDestruction.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="udpGroupSocket.hpp">
+    <ClInclude Include="util\udpGroupSocket.hpp">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="XOR.h">
+    <ClInclude Include="util\XmlOperator.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\AbstractFactory.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\Adapter.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\bridgePattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\BuilderPattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\ChainResponsibility.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\Command.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\CommandPattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\CompositePattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\DecoratorPattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\FacadePattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\FactoryMethod.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\Flyweight.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\Mediator.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\MementoPattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\Observer.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\ProtypePattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\ProxyPattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\SimpleFactory.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\singleton.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\StrategyPattern.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\TemplateMethod.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="DesignPattern\Visitor.h">
+      <Filter>DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\structDdat.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="structDdat.h">
+    <ClInclude Include="Algorithm\XOR.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="XmlOperator.h">
-      <Filter>util</Filter>
+    <ClInclude Include="tinyxml.h\tinystr.h">
+      <Filter>tinyxml</Filter>
     </ClInclude>
-    <ClInclude Include="CodeConvert.h">
-      <Filter>util</Filter>
+    <ClInclude Include="tinyxml.h\tinyxml.h">
+      <Filter>tinyxml</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -129,14 +143,26 @@
     <ClCompile Include="simpleWin32.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="OutPut.cpp">
+    <ClCompile Include="util\CodeConvert.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="XmlOperator.cpp">
+    <ClCompile Include="util\OutPut.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="CodeConvert.cpp">
+    <ClCompile Include="util\XmlOperator.cpp">
       <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.h\tinystr.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.h\tinyxml.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.h\tinyxmlerror.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.h\tinyxmlparser.cpp">
+      <Filter>tinyxml</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

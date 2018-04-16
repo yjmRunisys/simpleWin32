@@ -45,4 +45,9 @@ public:
 
 void TestXml();
 
+class CTestTinyXml{
+public:
+	static int testTXml(int argc, char *argv[]);
+};
+
 
