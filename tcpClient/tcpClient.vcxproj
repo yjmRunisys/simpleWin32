@@ -11,16 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{77D4FD4E-687B-4BA7-A90E-EBD754DB2CA2}</ProjectGuid>
+    <ProjectGuid>{10DC792D-63C0-46FC-8AD4-A0AB3A86890A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>simpleWin32</RootNamespace>
+    <RootNamespace>tcpClient</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -50,7 +49,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\;.\tinyxml.h;.\Algorithm;.\DesignPattern;.\util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\simpleWin32;..\simpleWin32\util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -65,7 +64,6 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\tinyxml.h;.\Algorithm;.\DesignPattern;.\util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -78,60 +76,18 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Algorithm\structDdat.h" />
-    <ClInclude Include="Algorithm\XOR.h" />
-    <ClInclude Include="DesignPattern\AbstractFactory.h" />
-    <ClInclude Include="DesignPattern\Adapter.h" />
-    <ClInclude Include="DesignPattern\bridgePattern.h" />
-    <ClInclude Include="DesignPattern\BuilderPattern.h" />
-    <ClInclude Include="DesignPattern\ChainResponsibility.h" />
-    <ClInclude Include="DesignPattern\Command.h" />
-    <ClInclude Include="DesignPattern\CommandPattern.h" />
-    <ClInclude Include="DesignPattern\CompositePattern.h" />
-    <ClInclude Include="DesignPattern\DecoratorPattern.h" />
-    <ClInclude Include="DesignPattern\FacadePattern.h" />
-    <ClInclude Include="DesignPattern\FactoryMethod.h" />
-    <ClInclude Include="DesignPattern\Flyweight.h" />
-    <ClInclude Include="DesignPattern\Mediator.h" />
-    <ClInclude Include="DesignPattern\MementoPattern.h" />
-    <ClInclude Include="DesignPattern\Observer.h" />
-    <ClInclude Include="DesignPattern\ProtypePattern.h" />
-    <ClInclude Include="DesignPattern\ProxyPattern.h" />
-    <ClInclude Include="DesignPattern\SimpleFactory.h" />
-    <ClInclude Include="DesignPattern\singleton.h" />
-    <ClInclude Include="DesignPattern\StrategyPattern.h" />
-    <ClInclude Include="DesignPattern\TemplateMethod.h" />
-    <ClInclude Include="DesignPattern\Visitor.h" />
+    <ClInclude Include="..\simpleWin32\testTcpServerAndClient.hpp" />
+    <ClInclude Include="..\simpleWin32\util\TcpSocket.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="StrAddress.h" />
-    <ClInclude Include="stringSteam.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="testTcpServerAndClient.hpp" />
-    <ClInclude Include="tinyxml.h\tinystr.h" />
-    <ClInclude Include="tinyxml.h\tinyxml.h" />
-    <ClInclude Include="util\CodeConvert.h" />
-    <ClInclude Include="util\OutPut.h" />
-    <ClInclude Include="util\quoteUse.h" />
-    <ClInclude Include="util\RecordTime.hpp" />
-    <ClInclude Include="util\TcpSocket.h" />
-    <ClInclude Include="util\testCStringDestruction.h" />
-    <ClInclude Include="util\udpGroupSocket.hpp" />
-    <ClInclude Include="util\XmlOperator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="simpleWin32.cpp" />
+    <ClCompile Include="..\simpleWin32\util\TcpSocket.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="tinyxml.h\tinystr.cpp" />
-    <ClCompile Include="tinyxml.h\tinyxml.cpp" />
-    <ClCompile Include="tinyxml.h\tinyxmlerror.cpp" />
-    <ClCompile Include="tinyxml.h\tinyxmlparser.cpp" />
-    <ClCompile Include="util\CodeConvert.cpp" />
-    <ClCompile Include="util\OutPut.cpp" />
-    <ClCompile Include="util\TcpSocket.cpp" />
-    <ClCompile Include="util\XmlOperator.cpp" />
+    <ClCompile Include="tcpClient.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

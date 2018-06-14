@@ -135,6 +135,18 @@
     <ClInclude Include="tinyxml.h\tinyxml.h">
       <Filter>tinyxml</Filter>
     </ClInclude>
+    <ClInclude Include="StrAddress.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="stringSteam.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="util\TcpSocket.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="testTcpServerAndClient.hpp">
+      <Filter>util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -163,6 +175,9 @@
     </ClCompile>
     <ClCompile Include="tinyxml.h\tinyxmlparser.cpp">
       <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="util\TcpSocket.cpp">
+      <Filter>util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

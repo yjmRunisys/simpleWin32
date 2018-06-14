@@ -4,14 +4,12 @@
 #include "testCStringDestruction.h"
 #include "structDdat.h"
 #include "XmlOperator.h"
+#include "StrAddress.h"
+#include "stringSteam.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	//testUdpGroup();
-	//testTemplateMethod();
-	TestXml();
-	//testXorMechod();
-	//testStructData();
+	testStringStream();
 	
 	return 0;
 }
