@@ -7,7 +7,7 @@
 #define TEST_TIMES 100000
 #define TIME_MINIMNUM 5*60//至少测试300s
 #define CONNECT_IP "192.168.0.150"
-#define CONNECT_PORT 10015
+#define CONNECT_PORT 10150
 #define LOCAL_IP "192.168.0.150"
 
 void TestTcpServer()
@@ -59,7 +59,7 @@ void TestTcpServer()
 				dwCount0 = dwCount;
 			}
 		}
-		
+
 	}
 
 	delete[] bufSend;
@@ -116,7 +116,7 @@ void TestTcpClient()
 			}
 		}
 
-		
+
 	}
 
 	delete[] bufRecv;
@@ -161,6 +161,8 @@ int AbsoluteServer()
 	sockaddr_in remoteAddr;
 	int nAddrlen = sizeof(remoteAddr);
 	char revData[255];
+	printf("监控地址：%s\n",CONNECT_IP);
+	printf("监控端口:%d\n",CONNECT_PORT);
 	while(true)
 	{
 		printf("等待连接...\n");
@@ -173,12 +175,12 @@ int AbsoluteServer()
 		printf("接受到一个连接：%s\r\n",inet_ntoa(remoteAddr.sin_addr));
 
 		//发送数据
-// 		char *sendData0 = new char[1024*1024];
-// 		for (int i = 0;i<100000000;i++)
-// 		{
-// 			send(sclient,sendData0,1024,0);
-// 		}
-// 		delete[] sendData0;
+		// 		char *sendData0 = new char[1024*1024];
+		// 		for (int i = 0;i<100000000;i++)
+		// 		{
+		// 			send(sclient,sendData0,1024,0);
+		// 		}
+		// 		delete[] sendData0;
 
 		//接收数据
 		int ret = recv(sclient,revData,255,0);
@@ -191,6 +193,7 @@ int AbsoluteServer()
 		//发送数据
 		char *sendData = "你好，TCP客户端!\n";
 		send(sclient,sendData,strlen(sendData),0);
+		Sleep(60000);
 		closesocket(sclient);
 	}	
 
@@ -201,12 +204,12 @@ int AbsoluteServer()
 
 int AbsoluteClient()
 {
-// 	WORD sockVersion = MAKEWORD(2,2);
-// 	WSADATA data;
-// 	if (WSAStartup(sockVersion,&data) != 0)
-// 	{
-// 		return 0;
-// 	}
+	// 	WORD sockVersion = MAKEWORD(2,2);
+	// 	WSADATA data;
+	// 	if (WSAStartup(sockVersion,&data) != 0)
+	// 	{
+	// 		return 0;
+	// 	}
 	if(!CTcpSocket::NetStartUp())
 	{
 		return 0;
@@ -244,3 +247,136 @@ int AbsoluteClient()
 	WSACleanup();
 	return 0;
 }
+
+typedef unsigned short uint16_t;
+typedef unsigned int uint32t;
+typedef int		int32_t;
+
+bool NoBlockClient(const string& _host, uint16_t _port, uint32t _timeout, int32_t& _sockfd)
+{
+
+	// 网络初始化  
+	WORD wVersionRequested;  
+	WSADATA wsaData;  
+	wVersionRequested = MAKEWORD(2, 2);  
+	WSAStartup( wVersionRequested, &wsaData );  
+
+	// 创建客户端socket(默认为是阻塞socket)  
+	SOCKET sockClient = socket(AF_INET, SOCK_STREAM, 0);  
+
+	// 设置为非阻塞的socket  
+	int iMode = 1;  
+	ioctlsocket(sockClient, FIONBIO, (u_long FAR*)&iMode); 
+
+	// 定义服务端  
+	SOCKADDR_IN addrSrv;  
+	addrSrv.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");  
+	addrSrv.sin_family = AF_INET;  
+	addrSrv.sin_port = htons(8888); 
+
+
+	// 超时时间  
+	struct timeval tm;  
+	tm.tv_sec  = 5; //5秒连接 
+	tm.tv_usec = 0;  
+	int ret = -1;  
+
+	// 尝试去连接服务端  
+	if (-1 != connect(sockClient, (SOCKADDR*)&addrSrv, sizeof(SOCKADDR)))  
+	{  
+		ret = 1; // 连接成功  
+	}  
+	else  
+	{  
+		fd_set set;  
+		FD_ZERO(&set);  
+		FD_SET(sockClient, &set);  
+
+		if (select(-1, NULL, &set, NULL, &tm) <= 0)  
+		{  
+			ret = -1; // 有错误(select错误或者超时)  
+		}  
+		else  
+		{  
+			int error = -1;  
+			int optLen = sizeof(int);  
+			getsockopt(sockClient, SOL_SOCKET, SO_ERROR, (char*)&error, &optLen);   
+
+			// 之所以下面的程序不写成三目运算符的形式， 是为了更直观， 便于注释  
+			if (0 != error)  
+			{  
+				ret = -1; // 有错误  
+			}  
+			else  
+			{  
+				ret = 1;  // 无错误  
+			}  
+		}  
+	}  
+
+	// 设回为阻塞socket  
+	iMode = 0;  
+	ioctlsocket(sockClient, FIONBIO, (u_long FAR*)&iMode); //设置为阻塞模式 
+
+	// connect状态  
+	printf("ret is %d\n", ret);  
+
+	// 发送数据到服务端测试以下  
+	if(1 == ret)  
+	{  
+		send(sockClient, "hello world", strlen("hello world") + 1, 0);  
+	}  
+
+	// 释放网络连接  
+	closesocket(sockClient);  
+	WSACleanup();  
+
+	return 0;  
+}
+
+int NoBlockServer()  
+{  
+	WORD wVersionRequested;  // 双字节，winsock库的版本  
+	WSADATA wsaData;         // winsock库版本的相关信息  
+
+	wVersionRequested = MAKEWORD(1, 1); // 0x0101 即:257  
+
+
+	// 加载winsock库并确定winsock版本，系统会把数据填入wsaData中  
+	WSAStartup( wVersionRequested, &wsaData );  
+
+
+	// AF_INET 表示采用TCP/IP协议族  
+	// SOCK_STREAM 表示采用TCP协议  
+	// 0是通常的默认情况  
+	unsigned int sockSrv = socket(AF_INET, SOCK_STREAM, 0);  
+
+	SOCKADDR_IN addrSrv;  
+
+	addrSrv.sin_family = AF_INET; // TCP/IP协议族  
+	addrSrv.sin_addr.S_un.S_addr = inet_addr("0.0.0.0"); // socket对应的IP地址  
+	addrSrv.sin_port = htons(8888); // socket对应的端口  
+
+	// 将socket绑定到某个IP和端口（IP标识主机，端口标识通信进程）  
+	bind(sockSrv,(SOCKADDR*)&addrSrv, sizeof(SOCKADDR));  
+
+	// 将socket设置为监听模式，5表示等待连接队列的最大长度  
+	listen(sockSrv, 5);  
+
+	SOCKADDR_IN addrClient;  
+	int len = sizeof(SOCKADDR);  
+	unsigned int sockConn = accept(sockSrv,(SOCKADDR*)&addrClient, &len);  
+
+	printf("To receive...\n");  
+	char recvBuf[100] = {0};  
+	recv(sockConn, recvBuf, 100, 0); // 接收客户端数据，最后一个参数一般设置为0  
+	printf("recv is %s\n", recvBuf);  
+
+	while(1);  
+
+	closesocket(sockConn);    
+	closesocket(sockSrv);  
+	WSACleanup();  
+
+	return 0;  
+}  

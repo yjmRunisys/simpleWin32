@@ -6,8 +6,8 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	TestTcpServer();
-	//AbsoluteServer();
+	//TestTcpServer();
+	AbsoluteServer();
 	return 0;
 }
 
